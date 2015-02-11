@@ -4,11 +4,7 @@ import org.scalatest.{Matchers, FlatSpec}
  * Created by sergio on 11/02/15.
  */
 class RationalSpec extends FlatSpec with Matchers{
-  "rational" should "allow creation" in {
-    val r = Rational(1,2)
-  }
-
-  it should "support addtion of 0's" in {
+  "rational add" should "allow creation" in {
     Rational(0,1) + Rational(0,1) should be (Rational(0,1))
   }
 
@@ -36,8 +32,15 @@ class RationalSpec extends FlatSpec with Matchers{
     Rational(1,5) + Rational(1,-5) should be (Rational(0,1))
   }
 
+  "rational mul" should "multiply 2 rationals" in {
+    Rational(1,2) * Rational(1,2) should be (Rational(1,4))
+  }
+
+
   "gcd" should "find common divisor" in {
     Rational.gcd(15,25) should be (5)
   }
+
+
 
 }
